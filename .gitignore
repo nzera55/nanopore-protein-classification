@@ -1,0 +1,44 @@
+# Raw and tabular experimental data
+*.abf
+*.atf
+*.xlsx
+*.xls
+*.numbers
+recordings.csv
+recordings_*.csv
+protein_data/
+data/
+
+# Generated datasets, figures, and trained models
+results/
+runs/
+outputs/
+processed_data/
+analysis/
+visualization/
+*.npz
+*.npy
+*.joblib
+*.pkl
+
+# Python environments and caches
+.venv/
+venv/
+myenv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Notebook and OS metadata
+.ipynb_checkpoints/
+.DS_Store
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+

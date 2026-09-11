@@ -1,0 +1,4 @@
+protein,concentration_nM,annotation_id,recording_id,annotation_path,annotation_format,abf_path,sweep_index,event_time_unit,time_reference,time_offset_s,enabled
+HSA,300,HSA_example,HSA_recording_01,/path/to/HSA_annotations.csv,csv,/path/to/HSA_recording.abf,0,ms,recording_start,0.0,true
+F8,300,F8_example,F8_recording_01,/path/to/F8_annotations.csv,csv,/path/to/F8_recording.abf,0,ms,recording_start,0.0,true
+
