@@ -1,0 +1,24 @@
+{
+  "feature_table": "../../../../analysis/runs/nanopore_csv_v4_20260906_125846/event_extraction/abf_event_features.csv",
+  "extraction_manifest": "../../../../analysis/runs/nanopore_csv_v4_20260906_125846/event_extraction/run_manifest.json",
+  "duplicate_table": "../../../../analysis/runs/nanopore_csv_v4_20260906_125846/event_extraction/duplicate_annotations.csv",
+  "output_root": "../../../../analysis/runs",
+  "positive_label": "F8",
+  "negative_label": "HSA",
+  "group_column": "recording_id",
+  "higher_level_group_candidates": ["pore_id", "experimental_day", "batch_id", "session_id"],
+  "features": [
+    "dwell_time_ms", "blockage_percent", "blockage_mean", "blockage_sd",
+    "auc", "skewness", "kurtosis", "fwhm_width", "fwhm_drop",
+    "rise_time", "fall_time", "left_slope", "right_slope"
+  ],
+  "seeds": [11, 42, 73, 202, 991],
+  "outer_test_fraction": 0.2,
+  "validation_fraction": 0.2,
+  "inner_cv_splits": 3,
+  "minimum_recordings_per_class_for_three_way_split": 3,
+  "confidence_interval_bootstraps": 500,
+  "selection_metric": "balanced_accuracy",
+  "synthetic_events_per_recording": 45,
+  "synthetic_recordings_per_class": 6
+}

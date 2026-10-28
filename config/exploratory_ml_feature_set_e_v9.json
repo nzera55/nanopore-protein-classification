@@ -1,0 +1,28 @@
+{
+  "feature_table": "../../v9/event_extraction/runs/extract_v9_20260911_120500/abf_event_features.csv",
+  "extraction_manifest": "../../v9/event_extraction/runs/extract_v9_20260911_120500/run_manifest.json",
+  "duplicate_table": "../../v9/event_extraction/runs/extract_v9_20260911_120500/duplicate_annotations.csv",
+  "output_root": "../../v9/model_evaluation/runs/nanopore_exploratory_ml_20260911_130642/added_feature_sets",
+  "positive_label": "F8",
+  "negative_label": "HSA",
+  "group_column": "recording_id",
+  "higher_level_group_candidates": ["pore_id", "experimental_day", "batch_id", "session_id"],
+  "feature_sets": {
+    "set_e_segment_only": [
+      "segment_01_blockage_mean",
+      "segment_02_blockage_mean",
+      "segment_03_blockage_mean",
+      "segment_04_blockage_mean",
+      "segment_05_blockage_mean",
+      "segment_06_blockage_mean",
+      "segment_07_blockage_mean",
+      "segment_08_blockage_mean",
+      "segment_09_blockage_mean",
+      "segment_10_blockage_mean"
+    ]
+  },
+  "seeds": [11, 42, 73, 202, 991],
+  "exploratory_test_fraction": 0.2,
+  "exploratory_cv_splits": 3,
+  "minimum_recordings_per_class_for_three_way_split": 3
+}

@@ -1,0 +1,19 @@
+{
+  "feature_table": "../../../../processed_data/runs/extract_20260906_v5_segmentation_features_qc2/abf_event_features.csv",
+  "extraction_manifest": "../../../../processed_data/runs/extract_20260906_v5_segmentation_features_qc2/run_manifest.json",
+  "duplicate_table": "../../../../processed_data/runs/extract_20260906_v5_segmentation_features_qc2/duplicate_annotations.csv",
+  "output_root": "../../../../analysis/runs",
+  "positive_label": "F8",
+  "negative_label": "HSA",
+  "group_column": "recording_id",
+  "higher_level_group_candidates": ["pore_id", "experimental_day", "batch_id", "session_id"],
+  "feature_sets": {
+    "existing": ["dwell_time_ms", "blockage_percent", "blockage_mean", "blockage_sd", "auc", "skewness", "kurtosis", "fwhm_width", "fwhm_drop", "rise_time", "fall_time", "left_slope", "right_slope"],
+    "segment_only": ["segment_01_blockage_mean", "segment_01_blockage_sd", "segment_01_slope", "segment_02_blockage_mean", "segment_02_blockage_sd", "segment_02_slope", "segment_03_blockage_mean", "segment_03_blockage_sd", "segment_03_slope", "segment_04_blockage_mean", "segment_04_blockage_sd", "segment_04_slope", "segment_05_blockage_mean", "segment_05_blockage_sd", "segment_05_slope", "segment_06_blockage_mean", "segment_06_blockage_sd", "segment_06_slope", "segment_07_blockage_mean", "segment_07_blockage_sd", "segment_07_slope", "segment_08_blockage_mean", "segment_08_blockage_sd", "segment_08_slope", "segment_09_blockage_mean", "segment_09_blockage_sd", "segment_09_slope", "segment_10_blockage_mean", "segment_10_blockage_sd", "segment_10_slope", "segment_01_auc_fraction", "segment_02_auc_fraction", "segment_03_auc_fraction", "segment_04_auc_fraction", "segment_05_auc_fraction", "segment_06_auc_fraction", "segment_07_auc_fraction", "segment_08_auc_fraction", "segment_09_auc_fraction", "segment_10_auc_fraction", "entry_exit_mean_difference", "first_second_half_mean_difference", "center_edge_ratio", "segment_mean_range", "segment_mean_sd"],
+    "combined": ["dwell_time_ms", "blockage_percent", "blockage_mean", "blockage_sd", "auc", "skewness", "kurtosis", "fwhm_width", "fwhm_drop", "rise_time", "fall_time", "left_slope", "right_slope", "segment_01_blockage_mean", "segment_01_blockage_sd", "segment_01_slope", "segment_02_blockage_mean", "segment_02_blockage_sd", "segment_02_slope", "segment_03_blockage_mean", "segment_03_blockage_sd", "segment_03_slope", "segment_04_blockage_mean", "segment_04_blockage_sd", "segment_04_slope", "segment_05_blockage_mean", "segment_05_blockage_sd", "segment_05_slope", "segment_06_blockage_mean", "segment_06_blockage_sd", "segment_06_slope", "segment_07_blockage_mean", "segment_07_blockage_sd", "segment_07_slope", "segment_08_blockage_mean", "segment_08_blockage_sd", "segment_08_slope", "segment_09_blockage_mean", "segment_09_blockage_sd", "segment_09_slope", "segment_10_blockage_mean", "segment_10_blockage_sd", "segment_10_slope", "segment_01_auc_fraction", "segment_02_auc_fraction", "segment_03_auc_fraction", "segment_04_auc_fraction", "segment_05_auc_fraction", "segment_06_auc_fraction", "segment_07_auc_fraction", "segment_08_auc_fraction", "segment_09_auc_fraction", "segment_10_auc_fraction", "entry_exit_mean_difference", "first_second_half_mean_difference", "center_edge_ratio", "segment_mean_range", "segment_mean_sd"]
+  },
+  "seeds": [11, 42, 73, 202, 991],
+  "exploratory_test_fraction": 0.2,
+  "exploratory_cv_splits": 3,
+  "minimum_recordings_per_class_for_three_way_split": 3
+}

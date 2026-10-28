@@ -1,0 +1,44 @@
+{
+  "feature_table": "../../v9/event_extraction/runs/extract_v9_20260911_120500/abf_event_features.csv",
+  "extraction_manifest": "../../v9/event_extraction/runs/extract_v9_20260911_120500/run_manifest.json",
+  "output_root": "../../v9/mixture_test/model_training/runs",
+  "positive_label": "F8",
+  "negative_label": "HSA",
+  "seeds": [11, 42],
+  "model_family": "random_forest",
+  "feature_sets": {
+    "set_c_core_shape": [
+      "dwell_time_ms", "blockage_mean", "blockage_sd", "auc", "fwhm_width",
+      "skewness", "kurtosis", "rise_time", "fall_time"
+    ],
+    "set_d_core_segments": [
+      "dwell_time_ms", "blockage_mean", "blockage_sd", "auc", "fwhm_width",
+      "segment_01_blockage_mean", "segment_02_blockage_mean",
+      "segment_03_blockage_mean", "segment_04_blockage_mean",
+      "segment_05_blockage_mean", "segment_06_blockage_mean",
+      "segment_07_blockage_mean", "segment_08_blockage_mean",
+      "segment_09_blockage_mean", "segment_10_blockage_mean"
+    ],
+    "set_e_segment_only": [
+      "segment_01_blockage_mean", "segment_02_blockage_mean",
+      "segment_03_blockage_mean", "segment_04_blockage_mean",
+      "segment_05_blockage_mean", "segment_06_blockage_mean",
+      "segment_07_blockage_mean", "segment_08_blockage_mean",
+      "segment_09_blockage_mean", "segment_10_blockage_mean"
+    ]
+  },
+  "random_forest_parameters": {
+    "set_c_core_shape": {
+      "11": {"n_estimators": 100, "max_depth": 8, "min_samples_leaf": 1},
+      "42": {"n_estimators": 100, "max_depth": null, "min_samples_leaf": 1}
+    },
+    "set_d_core_segments": {
+      "11": {"n_estimators": 100, "max_depth": 8, "min_samples_leaf": 1},
+      "42": {"n_estimators": 100, "max_depth": 8, "min_samples_leaf": 1}
+    },
+    "set_e_segment_only": {
+      "11": {"n_estimators": 100, "max_depth": null, "min_samples_leaf": 1},
+      "42": {"n_estimators": 100, "max_depth": null, "min_samples_leaf": 1}
+    }
+  }
+}

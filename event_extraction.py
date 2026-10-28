@@ -186,6 +186,7 @@ def validate_recording_manifest(
     valid_proteins = {
         "HSA",
         "F8",
+        "MIXTURE",
     }
 
     invalid_proteins = (
@@ -345,8 +346,15 @@ def _normalize_tabular_events(rows, fieldnames, event_time_unit, source_format):
 
     events = []
     for source_row_number, row in enumerate(rows, start=2):
+        normalized_row = {
+            str(key).strip().casefold(): value
+            for key, value in row.items()
+        }
+
         def source_number(column):
-            value = str(row.get(column) or "").strip()
+            value = str(
+                normalized_row.get(str(column).strip().casefold()) or ""
+            ).strip()
             try:
                 number = float(value)
             except ValueError:
@@ -967,6 +975,16 @@ def collect_events_for_abf_group(
 
                 "time_offset_s":
                     float(row.time_offset_s),
+
+                "experiment_metadata": {
+                    "concentration_nM": getattr(row, "concentration_nM", np.nan),
+                    "mixture_id": getattr(row, "mixture_id", ""),
+                    "hsa_to_f8_ratio": getattr(row, "hsa_to_f8_ratio", ""),
+                    "hsa_fraction": getattr(row, "hsa_fraction", np.nan),
+                    "f8_fraction": getattr(row, "f8_fraction", np.nan),
+                    "voltage_mV": getattr(row, "voltage_mV", np.nan),
+                    "pore_id": getattr(row, "pore_id", ""),
+                },
             })
 
     def event_start_time(item):
@@ -1202,6 +1220,7 @@ def process_abf_group(
 
         event = item["event"]
         time_offset_s = float(item["time_offset_s"])
+        experiment_metadata = item["experiment_metadata"]
 
         metadata = {
             "protein":
@@ -1266,6 +1285,8 @@ def process_abf_group(
 
             "source_baseline":
                 event.get("_source_baseline", np.nan),
+
+            **experiment_metadata,
 
             "time_offset_s":
                 time_offset_s,

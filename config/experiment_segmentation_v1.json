@@ -1,0 +1,23 @@
+{
+  "data_root": "../../../..",
+  "manifest_path": "recordings.csv",
+  "extraction_output_root": "processed_data/runs",
+  "visualization_output_root": "visualization/runs",
+  "dataset_version": "v5_segmentation_features",
+  "feature_definition_version": "1.2.0",
+  "baseline_window_ms": 1.0,
+  "shape_smoothing_window_ms": 0.05,
+  "shape_context_window_ms": 1.0,
+  "minimum_shape_peak_snr": 3.0,
+  "alignment_sample_events": 3,
+  "alignment_minimum_correlation": 0.999,
+  "alignment_maximum_normalized_rmse": 0.01,
+  "plot_lower_percentile": 1.0,
+  "plot_upper_percentile": 99.0,
+  "protein_order": [
+    "HSA",
+    "F8"
+  ],
+  "random_seed": 42,
+  "generate_all_scatter_plots": false
+}

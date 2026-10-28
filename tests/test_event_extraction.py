@@ -103,6 +103,19 @@ class EventExtractionTests(unittest.TestCase):
         self.assertEqual(events[1]["_load_qc_reason"], "nonpositive_event_duration")
         self.assertEqual(events[2]["_load_qc_reason"], "missing_event_start")
 
+    def test_csv_loader_matches_blockage_column_case_insensitively(self):
+        content = (
+            "Event start,Event end,Dwell time(ms),%Blockage\n"
+            "10,12,2,35.5\n"
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "events.csv"
+            path.write_text(content, encoding="utf-8")
+            event = ee.load_csv_events(path, event_time_unit="ms")[0]
+
+        self.assertEqual(event["_source_blockage_percent"], 35.5)
+        self.assertEqual(event["blockagePercent"], 35.5)
+
     def test_equal_boundary_is_reconstructed_symmetrically_from_dwell_time(self):
         content = (
             "Event start,Event end,Dwell time(ms),%blockage\n"
